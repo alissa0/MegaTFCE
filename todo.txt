@@ -1,0 +1,2 @@
+ - Add TF 2.9 entities (tfortmap possibility?)
+ - Add fix for sniper rifle prime system (the way it works now affects players with different framerates)

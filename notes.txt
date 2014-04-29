@@ -1,0 +1,6 @@
+1) With FTE Server, the grappling hook does not lock on if you are standing on the ground
+	FIX: set sv_gameplayfix_honest_tracelines to 0
+	NOTE: This is now fixed in MegaTF&CE
+2) With FTE Server, players using jetpack fly
+	FIX: set localinfo fteserver 1 in server console and restart map
+3) Friendly Fire is added for games with Teamplay set to 1 (support for teamplay 2 etc not added yet)

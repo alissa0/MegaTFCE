@@ -1,0 +1,73 @@
+Source file: progs.src
+outputfile: qwprogs.dat
+compiling clan.pqc
+compiling defs.pqc
+compiling qw.pqc
+compiling debug.pqc
+compiling menu.pqc
+compiling subs.pqc
+compiling combat.pqc
+compiling items.pqc
+compiling weapons.pqc
+compiling world.pqc
+compiling status.pqc
+compiling client.pqc
+in function PutClientInServer (line 85),
+client.pqc:1638: warning F307: type mismatch: void() to void(entity attacker, float damage) entity.th_pain
+in function fertimer (line 39),
+client.pqc:3981: warning F307: type mismatch: void(entity te) to void() entity.think
+compiling player.pqc
+compiling doors.pqc
+in function fd_secret_use (line 575),
+doors.pqc:591: warning F307: type mismatch: void() to void(entity attacker, float damage) entity.th_pain
+in function fd_secret_done (line 11),
+doors.pqc:675: warning F307: type mismatch: void() to void(entity attacker, float damage) entity.th_pain
+in function func_door_secret (line 713),
+doors.pqc:768: warning F307: type mismatch: void() to void(entity attacker, float damage) entity.th_pain
+compiling buttons.pqc
+compiling triggers.pqc
+compiling tforttm.pqc
+compiling plats.pqc
+compiling misc.pqc
+compiling monsters.pqc
+compiling ai.pqc
+compiling fight.pqc
+compiling dog.pqc
+in function monster_dog (line 596),
+dog.pqc:618: warning F307: type mismatch: void() to void(entity attacker, float damage) entity.th_pain
+compiling fish.pqc
+compiling flare.pqc
+compiling sentry.pqc
+compiling boss.pqc
+compiling pyro.pqc
+compiling spy.pqc
+compiling demoman.pqc
+compiling scout.pqc
+compiling engineer.pqc
+in function TeamFortress_FinishedBuilding (line 4),
+engineer.pqc:647: warning F307: type mismatch: void() to void(entity attacker, float damage) entity.th_pain
+compiling tsoldier.pqc
+compiling sniper.pqc
+compiling medic.pqc
+compiling tfort.pqc
+compiling tforthlp.pqc
+compiling tfortmap.pqc
+compiling hook.pqc
+compiling ctf.pqc
+compiling coop.pqc
+compiling actions.pqc
+compiling hiprot.pqc
+compiling missiles.pqc
+compiling mturret.pqc
+compiling camera.pqc
+in function Spawn_Prop (line 457),
+camera.pqc:491: warning F307: type mismatch: void() to void(entity attacker, float damage) entity.th_pain
+in function Cam (line 496),
+camera.pqc:710: warning F307: type mismatch: void(entity _p_1912) to void() entity.th_die
+compiling prematch.pqc
+compiling rpg.pqc
+compiling xavior.pqc
+compiling rankings.pqc
+Progs should run on any QuakeC VM
+Compile finished: qwprogs.dat
+Done. 9 warnings
