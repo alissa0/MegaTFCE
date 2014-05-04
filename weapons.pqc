@@ -32,7 +32,7 @@ void (string put) votemap_start;
 float airscout, drop3, drop2, drop1;
 void (float _p_10136) TeamFortress_ItemStatus;
 
-float prematch; 
+float prematch;
 
 void () lay;
 void () unlay;
@@ -129,7 +129,7 @@ void(entity Player) TeamFortress_TeamShowMemberClasses;
 // Camera Functions
 void() CamLock;
 void() CamDistLock;
-void() CamVecLock; 
+void() CamVecLock;
 void() CamAngleLock;
 void() CamRevAngleLock;
 void() CamProjectileLock;
@@ -177,7 +177,7 @@ void() TF_MovePlayer;
 
 void(vector org, float damage) SpawnBlood;
 
-void() W_Precache = 
+void() W_Precache =
 {
 	precache_sound("speech/yell/coverme.wav");
 	precache_sound("speech/yell/overhere.wav");
@@ -276,12 +276,12 @@ void() W_Precache =
 	precache_sound ("misc/update.wav");
 };
 
-float() crandom = 
+float() crandom =
 {
 	return 2 * (random() - 0.5);
 };
 
-void(float att_delay) Attack_Finished = 
+void(float att_delay) Attack_Finished =
 {
 	if (self.tfstate & 32768)
 	{
@@ -293,7 +293,7 @@ void(float att_delay) Attack_Finished =
 	}
 };
 
-void() ShellHit = 
+void() ShellHit =
 {
 	if (self.skin == TF_FLARE_OFF)
 	{
@@ -384,7 +384,7 @@ void () EjectShell =
 	}
 };
 
-void() StingerTouch = 
+void() StingerTouch =
 {
 	if (other.takedamage)
 	{
@@ -397,7 +397,7 @@ void() StingerTouch =
 	sound(self, TF_FLARE_OFF, "weapons/bounce.wav", TF_FLARE_OFF, TF_FLARE_OFF);
 };
 
-void() StingerElec = 
+void() StingerElec =
 {
 	local entity te;
 	self.effects = 4;
@@ -473,7 +473,7 @@ void () W_LaunchStinger =
 	setorigin (_l_2155, self.origin);
 };
 
-void() SpyPackRemove = 
+void() SpyPackRemove =
 {
 	sprint(self.owner, 2, "Your Ammo Trap failed...\n");
 	dremove(self);
@@ -518,7 +518,7 @@ void () SpyPackTouch =
 	}
 };
 
-void() SpyPack = 
+void() SpyPack =
 {
 	local entity te;
 	te = find(world, classname, "drop1");
@@ -562,7 +562,7 @@ void() SpyPack =
 	setmodel(newmis, "progs/backpack.mdl");
 };
 
-void() RemoveLavaPool = 
+void() RemoveLavaPool =
 {
 	sprint(self.owner, 2, "Your Lava has cooled...\n");
 	sound(self, 4, "misc/null.wav", TF_FLARE_LIT, TF_FLARE_OFF);
@@ -570,7 +570,7 @@ void() RemoveLavaPool =
 	dremove(self);
 };
 
-void() LavaTouch = 
+void() LavaTouch =
 {
 	if (other.classname != "player" && other.classname != "bot")
 	{
@@ -612,7 +612,7 @@ void() LavaTouch =
 	}
 };
 
-void() LavaBallTouch = 
+void() LavaBallTouch =
 {
 	if (other == self.owner)
 	{
@@ -642,7 +642,7 @@ void() LavaBallTouch =
 	}
 };
 
-void() LavaBecome = 
+void() LavaBecome =
 {
 	if (self.waterlevel > TF_FLARE_OFF)
 	{
@@ -663,7 +663,7 @@ void() LavaBecome =
 	self.touch = LavaTouch;
 };
 
-void() LavaPool = 
+void() LavaPool =
 {
 	if (self.has_syringe != TF_FLARE_OFF)
 	{
@@ -758,12 +758,12 @@ void() s2_explode8 = [7, SUB_Remove]
 {
 };
 
-void() BecomeExplosion = 
+void() BecomeExplosion =
 {
 	dremove(self);
 };
 
-float(float tno) num_team_pipebombs = 
+float(float tno) num_team_pipebombs =
 {
 	if (tno == TF_FLARE_OFF)
 	{
@@ -793,7 +793,7 @@ float(float tno) num_team_pipebombs =
 	return TF_FLARE_LIT;
 };
 
-void(float tno) ExplodeOldPipebomb = 
+void(float tno) ExplodeOldPipebomb =
 {
 	local entity old;
 	local float index;
@@ -829,7 +829,7 @@ void(float tno) ExplodeOldPipebomb =
 	}
 };
 
-void(float tno) increment_team_pipebombs = 
+void(float tno) increment_team_pipebombs =
 {
 	if (tno == TF_FLARE_OFF)
 	{
@@ -858,7 +858,7 @@ void(float tno) increment_team_pipebombs =
 	}
 };
 
-void(float tno) decrement_team_pipebombs = 
+void(float tno) decrement_team_pipebombs =
 {
 	if (tno == TF_FLARE_OFF)
 	{
@@ -887,7 +887,7 @@ void(float tno) decrement_team_pipebombs =
 	}
 };
 
-void() GrenadeExplode = 
+void() GrenadeExplode =
 {
 	if (self.classname == "pipebomb")
 	{
@@ -930,7 +930,7 @@ void() GrenadeExplode =
 	dremove(self);
 };
 
-void() GrenadeTouch = 
+void() GrenadeTouch =
 {
 	if (other == self.owner)
 	{
@@ -948,7 +948,7 @@ void() GrenadeTouch =
 	}
 };
 
-void() W_FireGrenade = 
+void() W_FireGrenade =
 {
 	if (self.option == TF_FLARE_OFF)
 	{
@@ -1036,7 +1036,7 @@ void() W_FireGrenade =
 	setorigin(newmis, self.origin);
 };
 
-void() HoloHumm = 
+void() HoloHumm =
 {
 	self.playerclass = self.playerclass + TF_FLARE_OFF;
 	self.nextthink = time + TF_FLARE_OFF;
@@ -1057,7 +1057,7 @@ void() HoloHumm =
 	}
 };
 
-void() HoloDood = 
+void() HoloDood =
 {
 	local entity holo;
 	sound(self, TF_FLARE_OFF, "weapons/railgr1a.wav", 0.6, TF_FLARE_OFF);
@@ -1087,7 +1087,7 @@ void() HoloDood =
 	multicast(self.origin, TF_FLARE_OFF);
 };
 
-void() SuperLeap = 
+void() SuperLeap =
 {
 
 	if (!airscout)
@@ -2888,7 +2888,7 @@ void () BalloonMIRV =
 	self.last_saveme_sound = (time + 2);
 	self.no_grenades_2 = (self.no_grenades_2 - TF_FLARE_OFF);
 	sprint (self, 2, "AirMIRV released!\n");
-	sound (self, 3, "weapons/chngnu1a.wav", TF_FLARE_OFF, TF_FLARE_OFF);	
+	sound (self, 3, "weapons/chngnu1a.wav", TF_FLARE_OFF, TF_FLARE_OFF);
 	newmis = spawn ();
 	newmis.health = 180;
 	newmis.takedamage = 2;
@@ -3283,7 +3283,7 @@ void () W_SetCurrentAmmo =
 			if ((self.owner.ammo_cells > 0))
 			{
 				self.ammo_cells = self.owner.ammo_cells;
-			}				
+			}
 			self.currentammo = self.ammo_cells;
 			self.weaponmodel = "progs/v_grap.mdl";
 			self.weaponframe = 0.000000;
@@ -3856,7 +3856,7 @@ void () W_Attack =
 	{
 		return;
 	}
-// pablo. no torpedos in mtf. gg 
+// pablo. no torpedos in mtf. gg
 //	if ((self.tools == (self.tools | 32)))
 //	{
 //		if ((self.tube_wing > 1))
@@ -4003,13 +4003,13 @@ void () W_Attack =
 						{
 							if ((self.current_weapon == 512))
 							{
-								player_nail1 ();								
+								player_nail1 ();
 							}
 							else
 							{
 								if ((self.current_weapon == 1024))
 								{
-									player_nail1 ();									
+									player_nail1 ();
 								}
 								else
 								{
@@ -5690,7 +5690,7 @@ void () ImpulseCommands =
 	if ((self.impulse == 202))
 	{
 		self.current_menu = 3;
-		self.menu_displaytime = 25;		
+		self.menu_displaytime = 25;
 		self.menu_count = 25;
 		self.oldcurrentammo = 1;
 	}
@@ -6320,7 +6320,7 @@ float () AxeTouch =
 //		{
 //			return;
 //		}
-//	} 
+//	}
 	self.avelocity = '300 300 300';
 	self.movetype = 10;
 	setsize (self, '-1 -2 -3', '1 2 3');
@@ -7720,17 +7720,30 @@ void () Prox =
 	{
 		if ((_l_11464.owner == self))
 		{
-			sprint (self, 2.000000, "1 proximity grenade at a time!\n");
-			if ((self.weaponmodel == "progs/proxgren.mdl"))
+			local float proxyDistance = vlen(_l_11464.origin - self.origin);
+			if (proxyDistance < 40)
 			{
-				self.current_weapon = W_BestWeapon ();
-				self.weaponmodel = "progs/v_rock2.mdl";
-				self.currentammo = self.ammo_rockets;
-				Attack_Finished (0.700000);
-				self.impulse = 0.000000;
-				self.StatusRefreshTime = (time + 0.100000);
+				dremove(_l_11464);
+				if (self.no_grenades_2 < 3.000000)
+				{
+					self.no_grenades_2 = (self.no_grenades_2 + 2.000000);
+				}
+				return;
 			}
-			return;
+			else
+			{
+				sprint (self, 2.000000, "1 proximity grenade at a time!\n");
+				if ((self.weaponmodel == "progs/proxgren.mdl"))
+				{
+					self.current_weapon = W_BestWeapon ();
+					self.weaponmodel = "progs/v_rock2.mdl";
+					self.currentammo = self.ammo_rockets;
+					Attack_Finished (0.700000);
+					self.impulse = 0.000000;
+					self.StatusRefreshTime = (time + 0.100000);
+				}
+				return;
+			}
 		}
 		_l_11464 = find (_l_11464, classname, "bot");
 	}
