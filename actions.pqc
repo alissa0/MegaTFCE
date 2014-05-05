@@ -1359,7 +1359,7 @@ void () review_timeleft = {
    if (minutes != self.health)
    {
 	   self.netname = ftos(self.health);
-	   bprint(2,"Timelimit ");
+	   bprint(2,"Timelimit ");
 	   if (minutes > self.health)
 		   bprint(2,"increased from ");
 	   else
@@ -1414,39 +1414,39 @@ void () review_timeleft = {
    if ((remaining == 5) & (seconds >= 5))
    {
 	       //print "5 seconds left"
-		   bprint(2,"µ óåãïîäó remaining!\n");
+		   bprint(2,"5 SECONDS remaining!\n");
 		   //sound (self,4,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_LIT);
    }
 
    else if ((remaining == 30) & (seconds >= 30))
    {
 	       //print "30 seconds left"
-		   bprint(2,"³° óåãïîäó remaining.\n");
+		   bprint(2,"30 SECONDS remaining.\n");
 		   //sound (self,4,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_LIT);
    }
    else if ((remaining == 60) & (seconds >= 60))
    {
 		   //print "1 minute left"
-		   bprint(2,"± íéîõôå remaining.\n");
+		   bprint(2,"1 MINUTE remaining.\n");
 		   //sound (self,4,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_LIT);
    }
 
    else if ((remaining == 300) & (seconds >= 300))
    {
 		   //print "5 minutes left"
-		   bprint(2,"µ íéîõôåó remaining.\n");
+		   bprint(2,"5 minutes remaining.\n");
 		   //sound (self,4,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_LIT);
    }
    else if ((remaining == 900) & (seconds >= 900))
    {
 		//print "15 minutes left"
-		bprint(2,"±µ íéîõôåó remaining.\n");
+		bprint(2,"15 minutes remaining.\n");
 		//sound (self,4,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_LIT);
    }
 	else if((remaining == 1800) & (seconds >= 1800))
 	{
 		//print "30 minutes left"
-		bprint(2,"³° íéîõôåó remaining.\n");
+		bprint(2,"30 minutes remaining.\n");
 		//sound (self,4,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_LIT);
 	}
    /* else if (remaining <= 0) 
@@ -1579,7 +1579,7 @@ void (entity _p_11534) TeamFortress_PrintPMTimeLeft =
 		{
 			if ((_l_11535 <= 10.000000))
 			{
-				centerprint (self, "Ðòåíáôãè éó Áâïõô ôï Åîä\n");
+				centerprint (self, "Prematch is about to end!\n");
 				return;
 			}
 			_l_11539 = "Prematch ends in ";
@@ -1598,25 +1598,25 @@ void () TeamFortress_Timeleft =
 	_l_11551 = infokey (world, "time");
 	if (((_l_11551 == "off") && (pointer_timeleft == world)))
 	{
-		sprint (self, 2.000000, "�Timeleft has been disabled.\n");
+		sprint (self, 2.000000, "Timeleft has been disabled.\n");
 		return;
 	}
 	else
 	{
 		if (((_l_11551 != "off") && (pointer_timeleft == world)))
 		{
-			sprint (self, 2.000000, "�Unknown.\n");
+			sprint (self, 2.000000, "Unknown.\n");
 			return;
 		}
 	}
 	if (((timelimit != 0.000000) && ((timelimit - pointer_timeleft.no_grenades_1) <= 0.000000)))
 	{
-		sprint (self, 2.000000, "�Time is up.\n");
+		sprint (self, 2.000000, "Time is up.\n");
 		return;
 	}
 	if (prematch)
 	{
-		sprint (self, 2.000000, "�Prematch: ");
+		sprint (self, 2.000000, "Prematch: ");
 		if ((pointer_prematchtimer == world))
 		{
 			sprint (self, 2.000000, "<could not find timer>\n");
@@ -1643,11 +1643,11 @@ void () TeamFortress_Timeleft =
 #endif
 
 		}
-		sprint (self, 2.000000, "�Game    : ");
+		sprint (self, 2.000000, "Game    : ");
 	}
 	else
 	{
-		sprint (self, 2.000000, "�");
+		sprint (self, 2.000000, " ");
 	}
 	_l_11549 = timelimit - pointer_timeleft.no_grenades_1;
 	sprint_duration (self, _l_11549);
