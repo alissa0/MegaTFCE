@@ -1342,164 +1342,6 @@ void () Det_Sent =
 	}
 }
 
-/*  gold.  this is the old timeleft stuff...
-void () review_timeleft = {
-	//gold. review_timeleft() and TeamFortress_Timeleft() are for plexi's timeleft command
-	local string st;
-   	local float minutes;
-   	local float seconds;
-   	local float remaining;
-
-   	self.no_grenades_1 = self.no_grenades_1 + 1;
-   	self.nextthink = (time + 1);
-
-   	st = infokey (world,"timelimit");
-   	minutes = stof(st);
-   	seconds = minutes * 60;
-   	
-   	if (st == "0")
-	   	return;
-
-   	remaining = seconds - self.no_grenades_1;
-   	if ((remaining == 5) & (seconds >= 5))
-   	{
-		//print "5 seconds left"
-		bprint(2,"�� ������� remaining!\n");
-		//sound (self,TF_FLARE_LIT,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_OFF);
-   	}
-	
-   	else if ((remaining == 30) & (seconds >= 30))
-   	{
-	       //print "30 seconds left"
-		 bprint(2,"��� ������� remaining.\n");
-		 //sound (self,TF_FLARE_LIT,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_OFF);
-   	}
-   	else if ((remaining == 60) & (seconds >= 60))
-   	{
-		 //print "1 minute left"
-		 bprint(2,"�� ������ remaining.\n");
-		 //sound (self,TF_FLARE_LIT,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_OFF);
-   	}
-
-   	else if ((remaining == 300) & (seconds >= 300))
-   	{
-		 //print "5 minutes left"
-		 bprint(2,"�� ������� remaining.\n");
-		 //sound (self,TF_FLARE_LIT,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_OFF);
-   	}
-	else if ((remaining == 900) & (seconds >= 900))
-	{
-		//print "15 minutes left"
-		bprint(2, "�� ������� remaining.\n");
-		//sound (self,TF_FLARE_LIT,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_OFF);
-	}
-	else if ((remaining == 1800) & (seconds >= 1800))
-	{
-		//print "30 minutes left"
-		bprint(2, "�� ������� remaining.\n");
-		//sound (self,TF_FLARE_LIT,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_OFF);
-	}
-   	else if (remaining <= 0)
-   	{
-		//print "Time is up."
-		//dont print, timer isn't extremely accurate, would only
-		//work 100% accurate  if the timer was in the server.
-		//this way it may be off 1-2 seconds either way =o[
-		//bprint(2,"����� �� ���\n");
-		self.nextthink = (time + 9999);
-   	}
-   	self.think = review_timeleft;
-};
-void () TeamFortress_Timeleft = {
-
-   local string st;
-   local float seconds;
-   local float remaining;
-   local float intplaceholder;
-   local float intseconds;
-   local entity te;
-
-   st = infokey (world,"timelimit");
-
-   if (st == "0")
-   {
-	   sprint(self,2,"�There is no timelimit.\n");
-	   return;
-   }
-   seconds = stof(st);
-   seconds = seconds * 60;
-   
-   st = ftos(seconds);
-   te = find (world,classname,"countdown");
-
-   if (te == world)
-   {
-       dprint ("COUNTDOWN has been removed!\n");
-	   //sprint(self,2, "�Time is up.\n");
-	   return;
-   }
-   
-   remaining = seconds - te.no_grenades_1;
-
-   if (remaining <= 0)
-   {
-	   sprint(self,2,"�Time is up.\n");
-	   return;
-   }
-
-	sprint(self,2,"�");
-
-	intplaceholder = remaining;
-	remaining = remaining / 60;
-	seconds = 0;
-
-	while (seconds < remaining)
-	{
-		seconds = seconds + 1;
-	}
-
-    seconds = seconds - 1;
-	intseconds = seconds * 60;
-	intseconds = intplaceholder - intseconds;
-
-	if (seconds > 0)
-	{
-		st = ftos(seconds);
-		sprint(self,2,st);
-		if (st == "1")
-		{
-			sprint(self,2," minute");
-		}
-		else
-		{
-		    sprint(self,2," minutes");
-		}
-		st = ftos(intseconds);
-		if (st != "60")
-		{
-			sprint (self,2,", ");
-			sprint(self,2,st);
-			if (st == "1")
-			{
-			   sprint(self,2," second");
-			}
-			else
-			{
-			   sprint(self,2," seconds");
-			}
-		}
-		sprint(self,2," remaining.\n");
-
-	}
-	else
-	{
-		st = ftos(intplaceholder);
-		sprint(self,2,st);
-		sprint(self,2," seconds remaining.\n");
-	}
-	//stuffcmd (self,"play megatf/timer.wav\n");
-};
-*/
 void () review_timeleft = {
 
    local string st;
@@ -1517,7 +1359,7 @@ void () review_timeleft = {
    if (minutes != self.health)
    {
 	   self.netname = ftos(self.health);
-	   bprint(2,"�Timelimit ");
+	   bprint(2,"Timelimit ");
 	   if (minutes > self.health)
 		   bprint(2,"increased from ");
 	   else
@@ -1530,7 +1372,7 @@ void () review_timeleft = {
    }
 
    self.health = stof(st);
-   if (st == "0")
+   if (st == "0") 
 	   return;
 
    //Let everyone know how much time is left in the game
@@ -1572,42 +1414,42 @@ void () review_timeleft = {
    if ((remaining == 5) & (seconds >= 5))
    {
 	       //print "5 seconds left"
-		   bprint(2,"�� ������� remaining!\n");
+		   bprint(2,"µ óåãïîäó remaining!\n");
 		   //sound (self,4,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_LIT);
    }
 
    else if ((remaining == 30) & (seconds >= 30))
    {
 	       //print "30 seconds left"
-		   bprint(2,"��� ������� remaining.\n");
+		   bprint(2,"³° óåãïîäó remaining.\n");
 		   //sound (self,4,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_LIT);
    }
    else if ((remaining == 60) & (seconds >= 60))
    {
 		   //print "1 minute left"
-		   bprint(2,"�� ������ remaining.\n");
+		   bprint(2,"± íéîõôå remaining.\n");
 		   //sound (self,4,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_LIT);
    }
 
    else if ((remaining == 300) & (seconds >= 300))
    {
 		   //print "5 minutes left"
-		   bprint(2,"�� ������� remaining.\n");
+		   bprint(2,"µ íéîõôåó remaining.\n");
 		   //sound (self,4,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_LIT);
    }
    else if ((remaining == 900) & (seconds >= 900))
    {
 		//print "15 minutes left"
-		bprint(2,"��� ������� remaining.\n");
+		bprint(2,"±µ íéîõôåó remaining.\n");
 		//sound (self,4,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_LIT);
    }
 	else if((remaining == 1800) & (seconds >= 1800))
 	{
 		//print "30 minutes left"
-		bprint(2,"��� ������� remaining.\n");
+		bprint(2,"³° íéîõôåó remaining.\n");
 		//sound (self,4,"megatf/timer.wav",TF_FLARE_OFF,TF_FLARE_LIT);
 	}
-   /* else if (remaining <= 0)
+   /* else if (remaining <= 0) 
    {
 	   //print "Time is up."
 	   localcmd("serverinfo timeleft 00:00\n");
@@ -1737,7 +1579,7 @@ void (entity _p_11534) TeamFortress_PrintPMTimeLeft =
 		{
 			if ((_l_11535 <= 10.000000))
 			{
-				centerprint (self, "�������� �� ����� �� ���\n");
+				centerprint (self, "Ðòåíáôãè éó Áâïõô ôï Åîä\n");
 				return;
 			}
 			_l_11539 = "Prematch ends in ";
