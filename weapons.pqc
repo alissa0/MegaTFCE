@@ -4259,9 +4259,16 @@ void () W_PrintWeaponMessage =
 					}
 					else
 					{
-						if (((self.weaponmode == 1.000000) && (self.option == 0.000000)))
+						if (self.weaponmode == 1.000000)
 						{
-							sprint (self, 1.000000, "Pipebomb mode\n");
+							if (self.option == 0.000000)
+							{
+								sprint (self, 1.000000, "Pipebomb mode\n");
+							}
+							else
+							{
+								sprint (self, 1.000000, "Long-range pipebomb mode\n");
+							}
 						}
 					}
 				}
@@ -4555,18 +4562,36 @@ void () W_ChangeWeapon =
 					{
 						if ((self.impulse == 4.000000))
 						{
-							fl = 512.000000;
-							if ((self.ammo_nails < 1.000000))
+							// Long Range Pipe-Bombs
+							if ((it & 2048.000000))
 							{
-								am = 1.000000;
+								fl = 2048.000000;
+								if ((self.ammo_rockets < 3.000000))
+								{
+									am = 3.000000;
+								}
+								else
+								{
+									sound (self, 1.000000, "weapons/rocklr1a.wav", 0.800000, 1.000000);
+								}
+								self.weaponmode = 1.000000;
+								self.option = 1.000000;
 							}
 							else
 							{
-								if ((self.playerclass != 8.000000))
+								fl = 512.000000;
+								if ((self.ammo_nails < 1.000000))
 								{
-									sound (self, 1.000000, "weapons/shotgr1a.wav", 0.800000, 1.000000);
+									am = 1.000000;
 								}
-							}
+								else
+								{						
+									if ((self.playerclass != 8.000000))
+									{
+										sound (self, 1.000000, "weapons/shotgr1a.wav", 0.800000, 1.000000);
+									}
+								}									
+							}							
 						}
 						else
 						{
